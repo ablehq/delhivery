@@ -7,7 +7,7 @@ module Delhivery
   class Connection    
     def initialize(opts)
       @token = opts[:api_key]
-      base_url = opts[:production] ? "https://track.delhivery.com/" : "https://test.delhivery.com"
+      base_url = opts[:production] ? "https://track.delhivery.com/" : "https://staging-express.delhivery.com/"
       @logger = ::Logger.new(STDOUT)
       #@logger = opts[:logger] || NullLogger.instance
       @connection = ::Faraday.new(base_url) do |conn|
