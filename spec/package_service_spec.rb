@@ -27,7 +27,7 @@ RSpec.describe Delhivery::PackageService do
       }
 
       VCR.use_cassette('package_service.edit') do
-        expect { Delhivery::PackageService.edit(package_params) }.to_not raise_error
+        expect { Delhivery::PackageService.edit(package_params) }.to raise_error
       end
     end
   end
@@ -51,7 +51,7 @@ RSpec.describe Delhivery::PackageService do
   describe ".cancel" do
     it '' do
       VCR.use_cassette('package_service.cancel') do
-        expect { Delhivery::PackageService.cancel(3132110000070) }.to_not raise_error
+        expect { Delhivery::PackageService.cancel(3132110000070) }.to raise_error
       end
     end
   end
