@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://test.delhivery.com/api/backend/clientwarehouse/edit/
+    uri: https://staging-express.delhivery.com/api/backend/clientwarehouse/edit/
     body:
       encoding: UTF-8
       string: '{"name":"AutomatedTestsWarehouse","registered_name":"AutomatedTestsEdited","address":"New
@@ -19,7 +19,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       allow:
       - POST, OPTIONS
@@ -45,6 +45,58 @@ http_interactions:
         8888888899, "address": "New Address Gurgaon", "active": false, "message":
         "client warehouse has been updated in HQ(Delhivery)."}, "success": true, "error":
         ""}'
-    http_version: 
+    http_version:
   recorded_at: Wed, 29 Mar 2017 06:20:41 GMT
+- request:
+    method: post
+    uri: https://staging-express.delhivery.com/api/backend/clientwarehouse/edit/
+    body:
+      encoding: UTF-8
+      string: '{"name":"AutomatedTestsWarehouse","registered_name":"AutomatedTestsEdited","address":"New
+        Address Gurgaon","phone":"8888888899"}'
+    headers:
+      User-Agent:
+      - Faraday v1.10.0
+      Authorization:
+      - Token --api-key-here--
+      Accept:
+      - application/json
+      Content-type:
+      - application/json
+  response:
+    status:
+      code: 401
+      message:
+    headers:
+      date:
+      - Tue, 17 May 2022 15:01:28 GMT
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      server:
+      - nginx
+      expires:
+      - Tue, 17 May 2022 15:01:28 GMT
+      vary:
+      - Accept, Cookie
+      last-modified:
+      - Tue, 17 May 2022 15:01:28 GMT
+      allow:
+      - POST, OPTIONS
+      cache-control:
+      - max-age=0
+      x-frame-options:
+      - SAMEORIGIN
+      www-authenticate:
+      - Token
+    body:
+      encoding: UTF-8
+      string: |-
+        There has been an error but we were asked to not let you see that.
+                                    Please contact the dev team.
+    http_version:
+  recorded_at: Tue, 17 May 2022 15:01:28 GMT
 recorded_with: VCR 3.0.3

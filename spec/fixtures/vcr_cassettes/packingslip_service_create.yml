@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://staging-express.delhivery.com/api/p/packing_slip?wbns=3132110000070
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.10.0
+      Authorization:
+      - Token --api-key-here--
+      Accept:
+      - application/json
+      Content-type:
+      - application/json
+  response:
+    status:
+      code: 401
+      message:
+    headers:
+      date:
+      - Tue, 17 May 2022 15:01:25 GMT
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      server:
+      - nginx
+      expires:
+      - Tue, 17 May 2022 15:01:25 GMT
+      vary:
+      - Cookie
+      last-modified:
+      - Tue, 17 May 2022 15:01:25 GMT
+      allow:
+      - GET, HEAD, OPTIONS
+      cache-control:
+      - max-age=0
+      x-frame-options:
+      - SAMEORIGIN
+      www-authenticate:
+      - Token
+    body:
+      encoding: UTF-8
+      string: |-
+        There has been an error but we were asked to not let you see that.
+                                    Please contact the dev team.
+    http_version:
+  recorded_at: Tue, 17 May 2022 15:01:25 GMT
+recorded_with: VCR 3.0.3
