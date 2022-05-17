@@ -1,5 +1,7 @@
 require 'faraday_middleware'
 require 'delhivery/faraday/raise_http_errors'
+require 'delhivery/faraday_connection'
+require 'delhivery/logger'
 require 'logger'
 require 'null_logger'
 
@@ -7,22 +9,7 @@ module Delhivery
   class Connection    
     def initialize(opts)
       @token = opts[:api_key]
-      base_url = opts[:production] ? "https://track.delhivery.com/" : "https://staging-express.delhivery.com"
-      @logger = ::Logger.new(STDOUT)
-      #@logger = opts[:logger] || NullLogger.instance
-      @connection = ::Faraday.new(base_url) do |conn|
-        conn.response :logger, @logger, bodies: true
-        conn.request :json
-        conn.request :url_encoded
-        conn.response :mashify
-        conn.response :json, :content_type => /\bjson$/
-        conn.use Delhivery::Faraday::Response::RaiseHttpError
-        conn.adapter ::Faraday.default_adapter
-      end
-    end
-
-    def log
-      @logger
+      @connection = opts[:production] ? Delhivery::FaradayConnection.shared_production : FaradayConnection.shared_staging
     end
 
     def get(route, params={}, headers={})
@@ -55,7 +42,7 @@ module Delhivery
           body,
           default_headers.merge(headers)
         )
-      log.debug(response.body)
+      Delhivery::Logger.debug(response.body)
       response
     end
   end
