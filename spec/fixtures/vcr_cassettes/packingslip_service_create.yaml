@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://test.delhivery.com/api/p/packing_slip?wbns=3132110000070
+    uri: https://staging-express.delhivery.com/api/p/packing_slip?wbns=3132110000070
     body:
       encoding: US-ASCII
       string: ''

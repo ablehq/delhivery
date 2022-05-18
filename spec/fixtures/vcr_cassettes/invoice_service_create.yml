@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://test.delhivery.com/kinko/api/invoice/charges/json/?cod=420&d_city=Pune&d_pin=411009&gm=840&md=E&o_city=New+Delhi&o_pin=110044&pt=cod
+    uri: https://staging-express.delhivery.com/kinko/api/invoice/charges/json/?cod=420&d_city=Pune&d_pin=411009&gm=840&md=E&o_city=New+Delhi&o_pin=110044&pt=cod
     body:
       encoding: US-ASCII
       string: ''
@@ -18,7 +18,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-type:
       - application/json; charset=utf-8
@@ -39,6 +39,51 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"error": "NSZ"}'
-    http_version: 
+    http_version:
   recorded_at: Mon, 03 Apr 2017 05:54:30 GMT
+- request:
+    method: get
+    uri: https://staging-express.delhivery.com/kinko/api/invoice/charges/json/?cod=420&d_city=Pune&d_pin=411009&gm=840&md=E&o_city=New+Delhi&o_pin=110044&pt=cod
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.10.0
+      Authorization:
+      - Token --api-key-here--
+      Accept:
+      - application/json
+      Content-type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message:
+    headers:
+      date:
+      - Tue, 17 May 2022 15:01:23 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      server:
+      - nginx
+      expires:
+      - Tue, 17 May 2022 15:01:23 GMT
+      vary:
+      - Authorization, Cookie
+      last-modified:
+      - Tue, 17 May 2022 15:01:23 GMT
+      cache-control:
+      - max-age=0
+      x-frame-options:
+      - SAMEORIGIN
+    body:
+      encoding: UTF-8
+      string: '"cl/pt missing"'
+    http_version:
+  recorded_at: Tue, 17 May 2022 15:01:23 GMT
 recorded_with: VCR 3.0.3
