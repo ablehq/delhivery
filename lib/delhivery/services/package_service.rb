@@ -6,8 +6,8 @@ module Delhivery
       connection.post(create_path, formatted_param, {'Content-Type': 'application/x-www-form-urlencoded'})
     end
 
-    def track_with_waybill_numbers(waybill_numbers, opts)
-      connection.get(track_path, {waybill: [waybill_numbers].flatten.join(','), verbose: opts[:verbose] || 2})
+    def track_with_waybill_numbers(waybill_numbers, opts={verbose: 2})
+      connection.get(track_path, {waybill: [waybill_numbers].flatten.join(','), verbose: opts[:verbose]})
     end
 
     def track_with_ref_numbers(*ref_numbers)
