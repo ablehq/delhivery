@@ -2,8 +2,6 @@ require "faraday"
 require "multi_json"
 require "json"
 require "yaml"
-require 'pry'
-require 'pry-nav'
 
 require "delhivery/errors"
 require "delhivery/configuration"
